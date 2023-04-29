@@ -1,5 +1,5 @@
 ARG BASEOS_DIGEST
-FROM docker.io/library/debian:10${BASEOS_DIGEST:-}
+FROM docker.io/library/debian:bookworm${BASEOS_DIGEST:-}
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
