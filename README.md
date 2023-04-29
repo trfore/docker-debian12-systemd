@@ -1,9 +1,9 @@
-# docker-{DISTRO}-systemd
+# docker-debian12-systemd
 
-[![CI](https://github.com/trfore/docker-image/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/trfore/docker-image/actions/workflows/ci.yml)
-[![CD](https://github.com/trfore/docker-image/actions/workflows/cd.yml/badge.svg?branch=main)](https://github.com/trfore/docker-image/actions/workflows/cd.yml)
+[![CI](https://github.com/trfore/docker-debian12-systemd/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/trfore/docker-debian12-systemd/actions/workflows/ci.yml)
+[![CD](https://github.com/trfore/docker-debian12-systemd/actions/workflows/cd.yml/badge.svg?branch=main)](https://github.com/trfore/docker-debian12-systemd/actions/workflows/cd.yml)
 
-A minimal systemd enabled {DISTRO} Docker image for testing Ansible roles with Molecule.
+A minimal systemd enabled debian12 Docker image for testing Ansible roles with Molecule.
 
 NOTE: This image does NOT contain Ansible tooling, e.g. `ansible-core` or `yamllint`. Thus, the use case is as target host for Ansible controllers or within the Molecule `create`/`converge`/`test` cycle.
 
@@ -12,9 +12,9 @@ NOTE: This image does NOT contain Ansible tooling, e.g. `ansible-core` or `yamll
 This image is built on Docker Hub automatically any time the upstream OS image is rebuilt, and any time a commit is made or merged to the `main` branch. But if you need to build the image on your own locally, do the following:
 
 1. Install [docker]
-2. Clone the repo, `git clone https://github.com/trfore/docker-{DISTRO}-systemd.git`
+2. Clone the repo, `git clone https://github.com/trfore/docker-debian12-systemd.git`
 3. `cd` into the directory
-4. Run `docker build --tag trfore/docker-{DISTRO}-systemd .`
+4. Run `docker build --tag trfore/docker-debian12-systemd .`
 
 ## How to Use
 
@@ -25,7 +25,7 @@ This image is built on Docker Hub automatically any time the upstream OS image i
 ```yaml
 platforms:
   - name: instance
-    image: trfore/docker-{DISTRO}-systemd:latest
+    image: trfore/docker-debian12-systemd:latest
     tmpfs:
       - /run
       - /tmp
@@ -39,9 +39,9 @@ platforms:
 ### Interactively
 
 1. Install [docker]
-2. Build an image locally (see above) or pull from Docker Hub: `docker pull trfore/docker-{DISTRO}-systemd:latest`
-3. Run a container from the image: `docker run -d -it --name {DISTRO}-systemd --privileged --cgroupns=host --tmpfs=/run --tmpfs=/tmp --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro trfore/docker-{DISTRO}-systemd:latest`
-4. Use it, ex: `docker exec -it {DISTRO}-systemd /bin/bash`
+2. Build an image locally (see above) or pull from Docker Hub: `docker pull trfore/docker-debian12-systemd:latest`
+3. Run a container from the image: `docker run -d -it --name debian12-systemd --privileged --cgroupns=host --tmpfs=/run --tmpfs=/tmp --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro trfore/docker-debian12-systemd:latest`
+4. Use it, ex: `docker exec -it debian12-systemd /bin/bash`
 
 ## Additional Images
 
