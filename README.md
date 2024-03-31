@@ -42,7 +42,7 @@ platforms:
     pre_build_image: true
 ```
 
-### Interactively
+### Interactively Using Docker
 
 1. Install [docker]
 2. Build an image locally (see above) or pull from Docker Hub: `docker pull trfore/docker-debian12-systemd:latest`
@@ -59,6 +59,14 @@ docker run -d -it --name debian12-systemd --privileged --cgroupns=host --tmpfs=/
 ```
 
 4. Use it, ex: `docker exec -it debian12-systemd /bin/bash`
+
+### Using Podman
+
+- Podman defaults to running containers in systemd mode, `--systemd=true`, and will mount the required tmpfs and cgroup filesystem. See [Podman Docs: Commands `run --systemd`] for details.
+
+```sh
+podman run -d -it --name debian12-systemd docker.io/trfore/docker-debian12-systemd:latest
+```
 
 ## Systemd with Cgroup V1 or V2
 
