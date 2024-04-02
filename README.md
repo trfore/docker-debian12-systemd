@@ -58,7 +58,11 @@ docker run -d -it --name debian12-systemd --privileged --cgroupns=host --tmpfs=/
 docker run -d -it --name debian12-systemd --privileged --cgroupns=host --tmpfs=/run --tmpfs=/tmp --volume=/sys/fs/cgroup:/sys/fs/cgroup:rw trfore/docker-debian12-systemd:latest
 ```
 
-4. Use it, ex: `docker exec -it debian12-systemd /bin/bash`
+4. Use it, example:
+
+```sh
+docker exec -it debian12-systemd /bin/bash
+```
 
 ### Using Podman
 
