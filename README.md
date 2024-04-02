@@ -55,7 +55,7 @@ docker run -d -it --name debian12-systemd --privileged --cgroupns=host --tmpfs=/
 3. **On Docker with Cgroup V2 (e.g. Ubuntu 22.04)**, run a container from the image:
 
 ```sh
-docker run -d -it --name debian12-systemd --privileged --cgroupns=host --tmpfs=/run --tmpfs=/tmp --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro trfore/docker-debian12-systemd:latest
+docker run -d -it --name debian12-systemd --privileged --cgroupns=host --tmpfs=/run --tmpfs=/tmp --volume=/sys/fs/cgroup:/sys/fs/cgroup:rw trfore/docker-debian12-systemd:latest
 ```
 
 4. Use it, ex: `docker exec -it debian12-systemd /bin/bash`
