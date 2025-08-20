@@ -3,7 +3,7 @@
 [![CI](https://github.com/trfore/docker-debian12-systemd/actions/workflows/ci.yml/badge.svg?event=pull_request)](https://github.com/trfore/docker-debian12-systemd/actions/workflows/ci.yml)
 [![CD](https://github.com/trfore/docker-debian12-systemd/actions/workflows/cd.yml/badge.svg)](https://github.com/trfore/docker-debian12-systemd/actions/workflows/cd.yml)
 
-A minimal systemd enabled debian12 Docker image for testing Ansible roles with Molecule.
+A minimal systemd enabled Debian 12 (Bookworm) Docker image for testing Ansible roles with Molecule.
 
 NOTE: This image does NOT contain Ansible tooling, e.g. `ansible-core` or `yamllint`. Thus, the use case is as target
 host for Ansible controllers or within the Molecule `create`/`converge`/`test` cycle.
